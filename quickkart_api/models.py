@@ -35,10 +35,11 @@ class Users(db.Model):
 
     def set_password(self,password):
         password_hash = bcrypt.generate_password_hash(password)
-        self.password_hash = password_hash.decode("utf-8")
+        print(password_hash)
+        self.password_hash = password_hash
 
     def check_password(self, password):
-        return bcrypt.check_password_hash(self.password_hash.decode("utf-8"), password)
+        return bcrypt.check_password_hash(self.password_hash, password)
 
 class Orders(db.Model):
     __tablename__ = 'orders'
