@@ -15,7 +15,6 @@ def registration():
         password = request.json["password"]
         email = request.json["email"]
         if not Users.query.filter_by(username=username).first() and not Users.query.filter_by(email=email).first():
-            password = bcrypt.generate_password_hash(password)
             user = Users(username=username,password_hash=password,email=email)
             db.session.add(user)
             db.session.commit()
