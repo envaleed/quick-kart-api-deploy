@@ -1,1 +1,0 @@
-from quickkart_api import app
