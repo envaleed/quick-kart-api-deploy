@@ -15,8 +15,8 @@ def registration():
         password = request.json["password"]
         email = request.json["email"]
         if not Users.query.filter_by(username=username).first() and not Users.query.filter_by(email=email).first():
-            password = Users.set_password(password)
-            user = Users(username=username,password_hash=password,email=email)
+            user = Users(username=username,email=email)
+            user.password_hash = user.set_password(password)
             db.session.add(user)
             db.session.commit()
             return jsonify({"You have successfully registered":user.username})
