@@ -27,7 +27,7 @@ class Users(db.Model):
     id = db.Column(db.Integer,primary_key=True, autoincrement=True)
     username = db.Column(db.String(64), index=True, unique=True, nullable=True)
     email = db.Column(db.String(64), index=True, unique=True, nullable=True)
-    password_hash = db.Column(db.CHAR(76), nullable=True)
+    password_hash = db.Column(db.BINARY(60), nullable=True)
     orders = db.relationship('Orders', backref="users", lazy=True)
 
     def __repr__(self):
