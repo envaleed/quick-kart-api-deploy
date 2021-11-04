@@ -7,4 +7,4 @@ def error_404(error):
 
 @app.errorhandler(500)
 def error_500(error):
-    return jsonify(error.description), 500
+    return jsonify(error.description), 404
