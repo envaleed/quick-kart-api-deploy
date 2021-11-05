@@ -2,6 +2,10 @@
 
 This Quick Kart API interfaces with the front end of the Android application made by another contributor. To test the API, you may use curl or Postman to send requests to the end points.
 
+# Live API Demo (refer to the endpoints section for routes to send requests to)
+
+https://quickkart-api.herokuapp.com/
+
 # Libaries and Technologies
 
 This API was developed using the Python microframework, Flask and tested using Postman and the curl command line tool. The libraries I used are as follows:
